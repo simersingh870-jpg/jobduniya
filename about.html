@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Duniya | About Us</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#0b1220;color:#fff;}
+    nav{
+      display:flex; justify-content:space-between; padding:15px 50px;
+      background:rgba(11,18,32,0.85); position:sticky; top:0; z-index:1000;
+    }
+    nav .logo{font-weight:bold; font-size:1.6rem; color:#00bfff;}
+    nav ul{list-style:none; display:flex; gap:25px;}
+    nav ul li a{color:#fff;text-decoration:none;font-weight:500;transition:0.3s;}
+    nav ul li a:hover, nav ul li a.active{color:#00bfff;}
+
+    .about-section{
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+      padding:80px 50px;
+      gap:50px;
+    }
+    .about-text{
+      flex:1 1 400px;
+      animation:fadeRight 1s ease;
+    }
+    .about-text h2{color:#00bfff; font-size:2.5rem; margin-bottom:20px;}
+    .about-text p{line-height:1.6; color:#ccc; margin-bottom:15px; font-size:1.1rem;}
+    .about-image{
+      flex:1 1 300px;
+      display:flex; justify-content:center;
+      animation:fadeLeft 1s ease;
+    }
+    .about-image img{
+      width:300px; border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,191,255,0.5);
+      transition:0.4s;
+    }
+    .about-image img:hover{transform:scale(1.05) rotate(2deg);}
+    @keyframes fadeRight{
+      from{opacity:0; transform:translateX(-50px);}
+      to{opacity:1; transform:translateX(0);}
+    }
+    @keyframes fadeLeft{
+      from{opacity:0; transform:translateX(50px);}
+      to{opacity:1; transform:translateX(0);}
+    }
+    footer{padding:20px;text-align:center;color:#888;background:#0b1220;}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo">Job<span>Duniya</span></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="post-job.html">Post Job</a></li>
+    <li><a href="apply.html">Apply</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="about-section">
+  <div class="about-text">
+    <h2>About Job Duniya</h2>
+    <p>We are committed to connecting talented individuals with the best opportunities in the industry. Our platform is designed to help job seekers and recruiters find the perfect match efficiently and effectively.</p>
+    <p>Our mission is to simplify the hiring process and empower professionals to achieve their career goals.</p>
+    <p>We value transparency, innovation, and growth, ensuring a seamless experience for everyone involved.</p>
+  </div>
+  <div class="about-image">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI1OTl8MHwxfHNlYXJjaHwxfHxqYWJ8ZW58MHx8fHwxNjk5NzQ2MzQ5&ixlib=rb-4.0.3&q=80&w=600"  alt="About Photo">
+  </div>
+</section>
+
+<footer>
+  © 2025 Job Duniya – All rights reserved
+</footer>
+</body>
+</html>

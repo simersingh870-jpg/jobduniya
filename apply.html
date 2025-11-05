@@ -1,0 +1,309 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Duniya | Apply Jobs</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Apply Page Hero */
+    .apply-hero {
+      background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b2ZmaWNlfGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000') no-repeat center center;
+      background-size: cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color:#ffffff;
+      position: relative;
+    
+    }
+    
+    .apply-hero::after {
+      content: "";
+      position: absolute;
+      inset:0;
+      background: rgba(11,18,32,0.6);
+    }
+    .apply-hero .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Job Listings */
+    .apply-section{
+      background:#0b1220;
+      padding:80px 40px;
+      text-align:center;
+    }
+    .apply-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+    .apply-card{
+      background:rgba(255,255,255,0.05);
+      border-radius:10px;
+      padding:25px;
+      text-align:left;
+      color:#fff;
+      transition:transform .3s ease, background .3s ease;
+      position:relative;
+    }
+    .apply-card:hover{
+      background:rgba(255,255,255,0.1);
+      transform:translateY(-8px);
+    }
+    .apply-card h3{ color:#00bfff; margin-bottom:10px; }
+    .apply-card p{ color:#ccc; margin:6px 0; }
+    .apply-card ul{ color:#ccc; margin:6px 0 12px 20px; }
+    .apply-card button{
+      padding:10px 20px;
+      border:none;
+      border-radius:8px;
+      background:#00bfff;
+      color:#000;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .apply-card button:hover{
+      background:#008ecf;
+      transform:translateY(-3px);
+    }
+
+    /* Modal Form */
+    .modal {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(255,255,255);
+      justify-content:center;
+      align-items:center;
+      z-index:2000;
+    }
+    .modal-content {
+      background:rgba(255,255,255); /* ← updated darker background */
+      padding:40px;
+      border-radius:12px;
+      width:90%;
+      max-width:500px;
+      text-align:left;
+      position:relative;
+      color:#fff;
+    }
+    .modal-content label{
+      display:block;
+      margin-top:15px;
+      color:#00bfff;
+      font-weight:500;
+    }
+    .modal-content input,
+    .modal-content textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #00bfff;
+      background:rgba(255,255,255,0.05);
+      color:#fff;
+      margin-top:5px;
+      transition:0.3s;
+    }
+    .modal-content input:focus,
+    .modal-content textarea:focus{
+      background:rgba(255,255,255,0.1);
+      outline:none;
+      transform:scale(1.02);
+    }
+    .modal-content button{
+      margin-top:20px;
+      padding:12px 28px;
+      border:none;
+      border-radius:8px;
+      background:#00bfff;
+      color:#000;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .modal-content button:hover{
+      background:#008ecf;
+      transform:translateY(-3px);
+    }
+
+    /* Success Tick Animation */
+    .success-tick {
+      display:none;
+      text-align:center;
+      margin-top:20px;
+      font-size:50px;
+      color:#0f0;
+      animation: pop 0.5s forwards;
+    }
+    @keyframes pop {
+      0%{transform:scale(0);}
+      50%{transform:scale(1.3);}
+      100%{transform:scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Job<span>Duniya</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="post-job.html">Post Job</a></li>
+      <li><a href="apply.html" class="active">Apply</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero apply-hero">
+    <div class="hero-content">
+      <h2 class="fade-in">Apply for <span>Jobs</span></h2>
+      <p class="slide-up">Select a job below and submit your details to apply.</p>
+    </div>
+  </section>
+
+  <!-- Job Listings -->
+  <section class="apply-section">
+    <h2 class="section-title fade-in">Available Jobs</h2>
+    <div class="apply-grid">
+      <div class="apply-card fade-in">
+        <h3>Frontend Developer</h3>
+        <p><strong>Company:</strong> TechNova Pvt Ltd</p>
+        <p><strong>Location:</strong> Bangalore</p>
+        <p>Build responsive web interfaces using React.js.</p>
+        <ul>
+          <li>Skills: HTML, CSS, JS, React.js</li>
+          <li>Experience: 1-3 years</li>
+        </ul>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="apply-card fade-in">
+        <h3>Marketing Executive</h3>
+        <p><strong>Company:</strong> GrowMedia</p>
+        <p><strong>Location:</strong> Mumbai</p>
+        <p>Create social media campaigns and brand content.</p>
+        <ul>
+          <li>Skills: Marketing, SEO, Content Creation</li>
+          <li>Experience: 2-4 years</li>
+        </ul>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="apply-card fade-in">
+        <h3>Graphic Designer</h3>
+        <p><strong>Company:</strong> PixelWorks Studio</p>
+        <p>Design graphics, banners, and promotional material.</p>
+        <ul>
+          <li>Skills: Photoshop, Illustrator</li>
+          <li>Experience: 1-3 years</li>
+        </ul>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="apply-card fade-in">
+        <h3>Data Analyst</h3>
+        <p><strong>Company:</strong> DataPro Analytics</p>
+        <p>Analyze data and generate reports for business insights.</p>
+        <ul>
+          <li>Skills: Excel, SQL, Tableau</li>
+          <li>Experience: 1-2 years</li>
+        </ul>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+
+      <div class="apply-card fade-in">
+        <h3>Backend Developer</h3>
+        <p><strong>Company:</strong> CodeHive</p>
+        <p>Develop robust APIs and database systems.</p>
+        <ul>
+          <li>Skills: Node.js, Express, MongoDB</li>
+          <li>Experience: 2-4 years</li>
+        </ul>
+        <button class="apply-btn">Apply Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Form -->
+  <div class="modal" id="applyModal">
+    <div class="modal-content">
+      <h3>Apply for Job</h3>
+      <form id="applyForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="skills">Your Skills</label>
+        <input type="text" id="skills" name="skills" placeholder="E.g. HTML, CSS, JS" required>
+
+        <label for="message">Additional Info</label>
+        <textarea id="message" name="message" rows="3"></textarea>
+
+        <button type="submit">Submit Application</button>
+        <div class="success-tick" id="successTick">&#10004;</div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Job Duniya – All rights reserved</p>
+  </footer>
+
+  <script>
+    // On-scroll animation
+    const elements = document.querySelectorAll('.fade-in, .slide-up, .zoom-in');
+    const appearOnScroll = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.style.animationPlayState = 'running';
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.2}
+    );
+    elements.forEach(el => appearOnScroll.observe(el));
+
+    // Modal Open
+    const modal = document.getElementById('applyModal');
+    const applyButtons = document.querySelectorAll('.apply-btn');
+    const successTick = document.getElementById('successTick');
+
+    applyButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        successTick.style.display = 'none';
+        document.getElementById('applyForm').reset();
+      });
+    });
+
+    // Form submit
+    document.getElementById('applyForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      successTick.style.display = 'block';
+      setTimeout(() => { modal.style.display = 'none'; }, 2000);
+    });
+
+    // Close modal on outside click
+    window.addEventListener('click', e => {
+      if(e.target == modal) modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

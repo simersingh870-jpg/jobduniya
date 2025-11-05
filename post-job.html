@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Duniya | Post a Job</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Job<span>Duniya</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="post-job.html" class="active">Post Job</a></li>
+      <li><a href="apply.html">Apply</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero post-job-hero">
+    <div class="hero-content">
+      <h1 class="fade-in">Post Your Job <span>Here</span></h1>
+      <p class="slide-up">Reach thousands of talented candidates. Fill the form below to post your job.</p>
+    </div>
+  </section>
+
+  <!-- Job Submission Form -->
+  <section class="form-section">
+    <h2 class="section-title fade-in">Job Details</h2>
+    <form id="jobForm" class="job-form fade-in">
+      <label for="company">Company Name</label>
+      <input type="text" id="company" name="company" placeholder="Enter company name" required />
+
+      <label for="title">Job Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter job title" required />
+
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="Enter location" required />
+
+      <label for="description">Job Description</label>
+      <textarea id="description" name="description" placeholder="Describe the job" rows="5" required></textarea>
+
+      <label for="email">Contact Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter contact email" required />
+
+      <button type="submit" class="btn primary">Post Job</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Job Duniya – All rights reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Simple form validation demo
+    document.getElementById('jobForm').addEventListener('submit', function(e){
+      e.preventDefault(); // Prevent actual submit
+      alert("Thank you! Your job has been posted (demo).");
+      this.reset(); // Clear form
+    });
+  </script>
+
+</body>
+</html>

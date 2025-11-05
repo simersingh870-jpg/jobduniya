@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Duniya | Contact Us</title>
+<style>
+  *{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+  body{background:#0b1220;color:#fff;}
+  nav{
+    display:flex; justify-content:space-between; padding:15px 50px;
+    background:rgba(11,18,32,0.85); position:sticky; top:0; z-index:1000;
+  }
+  nav .logo{font-weight:bold; font-size:1.6rem; color:#00bfff;}
+  nav ul{list-style:none; display:flex; gap:25px;}
+  nav ul li a{color:#fff;text-decoration:none;font-weight:500;transition:0.3s;}
+  nav ul li a:hover, nav ul li a.active{color:#00bfff;}
+
+  .contact-section{padding:80px 50px; display:flex; flex-wrap:wrap; gap:50px; justify-content:center; align-items:flex-start;}
+  .contact-info{flex:1 1 300px; animation:fadeRight 1s ease;}
+  .contact-info h2{color:#00bfff; font-size:2.5rem; margin-bottom:20px;}
+  .contact-info p{color:#ccc; margin-bottom:10px;}
+  .contact-form{flex:1 1 400px; animation:fadeLeft 1s ease;}
+  .contact-form form{
+    display:flex; flex-direction:column; gap:15px; background:rgba(255,255,255,0.05); padding:30px; border-radius:15px; backdrop-filter:blur(6px);
+  }
+  .contact-form input, .contact-form textarea{
+    padding:12px; border-radius:10px; border:1px solid #00bfff; background:rgba(255,255,255,0.05); color:#fff; transition:0.3s;
+  }
+  .contact-form input:focus, .contact-form textarea:focus{outline:none; background:rgba(255,255,255,0.1);}
+  .contact-form button{
+    padding:12px; border:none; border-radius:10px; cursor:pointer; font-weight:600; background:linear-gradient(45deg,#00bfff,#008ecf); color:#000; transition:0.3s;
+  }
+  .contact-form button:hover{background:linear-gradient(45deg,#008ecf,#00bfff); transform:scale(1.05);}
+  .contact-image{width:100%; margin-top:30px; display:flex; justify-content:center;}
+  .contact-image img{width:250px; border-radius:20px; box-shadow:0 10px 25px rgba(0,191,255,0.5); animation:float 3s ease-in-out infinite;}
+  
+  @keyframes fadeRight{from{opacity:0; transform:translateX(-50px);} to{opacity:1; transform:translateX(0);}}
+  @keyframes fadeLeft{from{opacity:0; transform:translateX(50px);} to{opacity:1; transform:translateX(0);}}
+  @keyframes float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);}}
+
+  footer{padding:20px;text-align:center;color:#888;background:#0b1220;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Job<span>Duniya</span></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="post-job.html">Post Job</a></li>
+    <li><a href="apply.html">Apply</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="contact-section">
+  <div class="contact-info">
+    <h2>Contact Us</h2>
+    <p>Email: info@jobduniya.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Address: 123 Tech Street, Mumbai, India</p>
+    <p>We are here to answer your queries and assist you in finding the perfect job.</p>
+  </div>
+
+  <div class="contact-form">
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea rows="4" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-image">
+  
+</div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Job Duniya – All rights reserved
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    alert('Message sent successfully!');
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
